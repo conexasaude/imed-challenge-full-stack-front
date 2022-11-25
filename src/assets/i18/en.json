@@ -1,0 +1,57 @@
+{
+  "global": {
+    "register": "Register",
+    "login": "Login",
+    "logout": "Logout",
+    "already_member": "Are you already a member?",
+    "create_new_account": "Create new account",
+    "welcome_message_header": "You're welcome!",
+    "welcome_message_body": "You have successfully logged in.",
+    "alert-success": "Successfully saved!"
+  },
+  "homepage": {
+    "title": "thiagorsena-angular",
+    "menu_dashboard": "Dashboard",
+    "menu_user": "Customers",
+    "menu_product": "Products",
+    "menu_order": "Orders",
+    "menu_attendance": "Attendance",
+    "title_attendance": "Attendances",
+    "title_attendance_form": "Attendance Register",
+    "title_user": "Registered Customers",
+    "title_product": "Registered Products",
+    "title_order": "Sales Orders",
+    "title_preferences": "Preferences",
+    "title_log_out": "Log out"
+  },
+  "registration": {
+    "description": "Create a free account!",
+    "name": "Name",
+    "email": "Email address",
+    "username": "Username",
+    "password": "Password"
+  },
+  "validations": {
+    "name": "Please enter a name",
+    "email": "Please enter an email",
+    "username": "Please enter a username",
+    "password": "Please enter a password"
+  },
+  "not_found_page": {
+    "header": "OOPS!",
+    "not_found_message": "Page Not Found",
+    "go_to_dashboard_button": "GO TO DASHBOARD"
+  },
+  "user_form_page": {
+    "label_name": "Name",
+    "label_cpf": "CPF",
+    "label_email": "E-mail",
+    "label_birth_date": "Birth Date",
+    "label_address": "Address",
+    "helper_address": "1885 Broadway St. Rainsville - AL 35986",
+    "btn_submit": "Submit",
+    "btn_cancel": "Cancel",
+    "field_required": "This field is required",
+    "label_attendance_date": "Attendance Date"
+  }
+}

@@ -1,0 +1,42 @@
+<h3>{{ 'homepage.title_order' | translate }}</h3>
+
+<clr-datagrid>
+
+  <clr-dg-action-bar>
+    <div class="btn-group">
+      <button type="button" class="btn btn-sm btn-secondary" (click)="onExport()">
+        <clr-icon shape="export"></clr-icon> Export
+      </button>
+    </div>
+  </clr-dg-action-bar>
+
+  <clr-dg-placeholder>No data found</clr-dg-placeholder>
+
+  <clr-dg-column [clrDgField]="'id'">Order ID</clr-dg-column>
+  <clr-dg-column [clrDgField]="'userId'">Client ID</clr-dg-column>
+  <clr-dg-column [clrDgField]="'userId'">Products</clr-dg-column>
+  <clr-dg-column [clrDgField]="'totalQuantity'" [clrDgColType]="'number'">Quantity</clr-dg-column>
+  <clr-dg-column [clrDgField]="'total'" [clrDgColType]="'number'">Total</clr-dg-column>
+
+  <clr-dg-row *clrDgItems="let order of orders">
+    <clr-dg-cell>{{order.id}}</clr-dg-cell>
+    <clr-dg-cell>{{order.userId}}</clr-dg-cell>
+    <clr-dg-cell>{{getStrItens(order.products)}}</clr-dg-cell>
+    <clr-dg-cell>{{order?.totalQuantity}}</clr-dg-cell>
+    <clr-dg-cell>R$ {{order.total}}</clr-dg-cell>
+    <clr-dg-action-overflow>
+      <button class="action-item" (click)="onEdit(order)">Edit</button>
+      <button class="action-item" (click)="onDelete(order)">Delete</button>
+    </clr-dg-action-overflow>
+  </clr-dg-row>
+
+  <clr-dg-footer>
+    <clr-dg-pagination #pagination [clrDgPageSize]="10">
+      <clr-dg-page-size #clrDgPageSize [clrPageSizeOptions]="[10,20,50,100]">
+        <label [for]="clrDgPageSize.pageSizeOptionsId">Itens per page</label>
+      </clr-dg-page-size>
+      {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}}
+      of {{pagination.totalItems}}
+    </clr-dg-pagination>
+  </clr-dg-footer>
+</clr-datagrid>

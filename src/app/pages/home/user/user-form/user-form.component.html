@@ -1,0 +1,58 @@
+<form class="clr-form clr-form-horizontal" clrForm [formGroup]="form">
+
+  <h3>Cadastro de Clientes</h3>
+  <!-- <p class="p2">Formulário de cadastro</p> -->
+
+  <clr-input-container>
+    <label class="clr-col-12">{{ 'user_form_page.label_name' | translate }}</label>
+    <input clrInput type="text" formControlName="firstName" name="firstName" required size="35" />
+    <clr-control-helper>Joe Doe</clr-control-helper>
+    <clr-control-error>{{ 'user_form_page.field_required' | translate }}</clr-control-error>
+  </clr-input-container>
+
+  <clr-input-container>
+    <label class="clr-col-12">{{ 'user_form_page.label_cpf' | translate }}</label>
+    <input clrInput type="text" formControlName="cpf" name="cpf" required size="35" />
+    <clr-control-helper>000.000.000-00</clr-control-helper>
+    <clr-control-error>{{ 'user_form_page.field_required' | translate }}</clr-control-error>
+  </clr-input-container>
+
+  <clr-input-container>
+    <label class="clr-col-12">{{ 'user_form_page.label_email' | translate }}</label>
+    <input clrInput type="email" formControlName="email" name="email" required size="35" />
+    <clr-control-helper>jdoe@email.com</clr-control-helper>
+    <clr-control-error>{{ 'user_form_page.field_required' | translate }}</clr-control-error>
+  </clr-input-container>
+
+  <clr-date-container>
+    <label class="clr-col-12">{{ 'user_form_page.label_birth_date' | translate }}</label>
+    <input type="date" clrDate formControlName="birthDate" name="birthDate" size="30" />
+  </clr-date-container>
+
+  <clr-textarea-container>
+    <label class="clr-col-12">{{ 'user_form_page.label_address' | translate }}</label>
+    <textarea clrTextarea formControlName="address" name="address" required cols="32" rows="3"></textarea>
+    <clr-control-helper>{{ 'user_form_page.helper_address' | translate }}</clr-control-helper>
+    <clr-control-error>{{ 'user_form_page.field_required' | translate }}</clr-control-error>
+  </clr-textarea-container>
+
+  <br>
+
+  <button class="btn btn-primary" type="submit" (click)="onSubmint()" [disabled]="!form.dirty || form.invalid">
+    {{ 'user_form_page.btn_submit' | translate }}
+  </button>
+
+  <button class="btn" type="button" (click)="form.reset()" routerLink="/my-app/user">
+    {{ 'user_form_page.btn_cancel' | translate }}
+  </button>
+
+  <br>
+
+  <clr-alert [clrAlertType]="'success'" (clrAlertClosedChange)="onClose()">
+    <clr-alert-item>
+      <span class="alert-text">
+        {{ 'global.alert-success' | translate }}
+      </span>
+    </clr-alert-item>
+  </clr-alert>
+</form>

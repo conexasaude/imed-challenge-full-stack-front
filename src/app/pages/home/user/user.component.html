@@ -1,0 +1,44 @@
+<h3>{{ 'homepage.title_user' | translate }}</h3>
+
+<clr-datagrid>
+
+  <clr-dg-action-bar>
+    <div class="btn-group">
+      <button type="button" class="btn btn-sm btn-secondary" [routerLink]="'/my-app/user-form'" (click)="onAdd()">
+        <clr-icon shape="plus"></clr-icon> Add
+      </button>
+    </div>
+  </clr-dg-action-bar>
+
+  <clr-dg-placeholder>No data found</clr-dg-placeholder>
+
+  <clr-dg-column [clrDgField]="'id'">User ID</clr-dg-column>
+  <clr-dg-column [clrDgField]="'firstName'">Name</clr-dg-column>
+  <clr-dg-column [clrDgField]="'firstName'">E-mail</clr-dg-column>
+  <clr-dg-column [clrDgField]="'firstName'">Phone</clr-dg-column>
+  <clr-dg-column [clrDgField]="'birthDate'">Birth Date</clr-dg-column>
+  <clr-dg-column [clrDgField]="'birthDate'">Domain</clr-dg-column>
+
+  <clr-dg-row *clrDgItems="let user of users">
+    <clr-dg-cell>{{user.id}}</clr-dg-cell>
+    <clr-dg-cell>{{user?.firstName}} {{user?.lastName}}</clr-dg-cell>
+    <clr-dg-cell>{{user.email}}</clr-dg-cell>
+    <clr-dg-cell>{{user.phone}}</clr-dg-cell>
+    <clr-dg-cell>{{user.birthDate | date}}</clr-dg-cell>
+    <clr-dg-cell>{{user.domain}}</clr-dg-cell>
+    <clr-dg-action-overflow>
+      <button class="action-item" (click)="onEdit(user)">Edit</button>
+      <button class="action-item" (click)="onDelete(user)">Delete</button>
+    </clr-dg-action-overflow>
+  </clr-dg-row>
+
+  <clr-dg-footer>
+    <clr-dg-pagination #pagination [clrDgPageSize]="10">
+      <clr-dg-page-size #clrDgPageSize [clrPageSizeOptions]="[10,20,50,100]">
+        <label [for]="clrDgPageSize.pageSizeOptionsId">Itens per page</label>
+      </clr-dg-page-size>
+      {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}}
+      of {{pagination.totalItems}}
+    </clr-dg-pagination>
+  </clr-dg-footer>
+</clr-datagrid>

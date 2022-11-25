@@ -1,0 +1,57 @@
+{
+  "global": {
+    "register": "Register",
+    "login": "Login",
+    "logout": "Logout",
+    "already_member": "Are you already a member?",
+    "create_new_account": "Create new account",
+    "welcome_message_header": "You're welcome!",
+    "welcome_message_body": "You have successfully logged in.",
+    "alert-success": "Salvo com sucesso!"
+  },
+  "homepage": {
+    "title": "thiagorsena-angular",
+    "menu_dashboard": "Dashboard",
+    "menu_user": "Clientes",
+    "menu_product": "Produtos",
+    "menu_order": "Pedidos",
+    "menu_attendance": "Atendimento",
+    "title_attendance": "Atendimentos",
+    "title_attendance_form": "Registro de Atendimento",
+    "title_user": "Clientes Cadastrados",
+    "title_product": "Produtos Cadastrados",
+    "title_order": "Pedidos de Venda",
+    "title_preferences": "Preferências",
+    "title_log_out": "Log out"
+  },
+  "registration": {
+    "description": "Create a free account!",
+    "name": "Name",
+    "email": "Email address",
+    "username": "Username",
+    "password": "Password"
+  },
+  "validations": {
+    "name": "Please enter a name",
+    "email": "Please enter an email",
+    "username": "Please enter a username",
+    "password": "Please enter a password"
+  },
+  "not_found_page": {
+    "header": "OOPS!",
+    "not_found_message": "Page Not Found",
+    "go_to_dashboard_button": "GO TO DASHBOARD"
+  },
+  "user_form_page": {
+    "label_name": "Nome",
+    "label_cpf": "CPF",
+    "label_email": "E-mail",
+    "label_birth_date": "Data Nascimento",
+    "label_address": "Endereço",
+    "helper_address": "Rua PedroXX, 123 - São Paulo - SP",
+    "btn_submit": "Salvar",
+    "btn_cancel": "Cancelar",
+    "field_required": "Este campo é obrigátorio",
+    "label_attendance_date": "Data Atendimento"
+  }
+}

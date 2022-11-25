@@ -1,0 +1,68 @@
+<form class="clr-form clr-form-horizontal" clrForm [formGroup]="form">
+
+  <h3>{{ 'homepage.title_attendance_form' | translate }}</h3>
+  <!-- <p class="p2">Formulário de cadastro</p> -->
+
+  <clr-input-container>
+    <label class="clr-col-12">{{ 'user_form_page.label_name' | translate }}</label>
+    <input clrInput type="text" formControlName="firstName" name="firstName" readonly required size="35" />
+    <clr-control-helper>Joe Doe</clr-control-helper>
+    <clr-control-error>{{ 'user_form_page.field_required' | translate }}</clr-control-error>
+  </clr-input-container>
+
+  <clr-select-container>
+    <label class="clr-col-12">Specialty</label>
+    <select clrSelect formControlName="specialty" name="specialty" required>
+      <option value=""></option>
+      <option *ngFor="let enum of SpecialtyType | keyvalue" [value]="enum.value">{{enum.value}}
+      </option>
+    </select>
+    <clr-control-helper>Neurology</clr-control-helper>
+    <clr-control-error>{{ 'user_form_page.field_required' | translate }}</clr-control-error>
+  </clr-select-container>
+
+  <clr-select-container>
+    <label class="clr-col-12">Health Professional</label>
+    <select clrSelect formControlName="healthProfessional" name="healthProfessional" required>
+      <option value=""></option>
+      <option value="one">Professional One</option>
+      <option value="two">Professional Two</option>
+      <option value="three">Professional Three</option>
+    </select>
+    <clr-control-helper>Select One</clr-control-helper>
+    <clr-control-error>{{ 'user_form_page.field_required' | translate }}</clr-control-error>
+  </clr-select-container>
+
+  <clr-date-container>
+    <label class="clr-col-12">{{ 'user_form_page.label_attendance_date' | translate }}</label>
+    <input type="date" clrDate formControlName="date" name="date" [min]="minDate" required size="30" />
+    <!-- <input type="date" [(clrDate)]="date" name="date" required size="30" /> -->
+  </clr-date-container>
+
+  <clr-textarea-container>
+    <label class="clr-col-12">Description</label>
+    <textarea clrTextarea formControlName="description" name="description" cols="32" rows="3"></textarea>
+    <clr-control-helper>Describe the attendance</clr-control-helper>
+    <clr-control-error>{{ 'user_form_page.field_required' | translate }}</clr-control-error>
+  </clr-textarea-container>
+
+  <br>
+
+  <button class="btn btn-primary" type="submit" (click)="onSubmint()" [disabled]="!form.dirty || form.invalid">
+    {{ 'user_form_page.btn_submit' | translate }}
+  </button>
+
+  <button class="btn" type="button" (click)="form.reset()" routerLink="/my-app/attendance">
+    {{ 'user_form_page.btn_cancel' | translate }}
+  </button>
+
+  <br>
+
+  <clr-alert [clrAlertType]="'success'" (clrAlertClosedChange)="onClose()" *ngIf="isFormSubmint()">
+    <clr-alert-item>
+      <span class="alert-text">
+        {{ 'global.alert-success' | translate }}
+      </span>
+    </clr-alert-item>
+  </clr-alert>
+</form>
