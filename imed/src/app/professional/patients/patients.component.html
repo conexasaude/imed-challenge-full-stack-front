@@ -1,0 +1,21 @@
+<div class="wrapper">
+    <h1>Pacientes Relacionados</h1>
+    <div class="cols">
+        <div *ngFor="let patient of patients;" class="col" ontouchstart="this.classList.toggle('hover');">
+            <div class="container">
+                <div class="front" style="background-color: #1D1CE5;">
+                    <div class="inner">
+                    <p>{{patient.patient.name}}</p>
+                    </div>
+                </div>
+                <div class="back">
+                    <div class="inner">
+                    <p>Total de consultas: {{patient.patient.totalAppointment}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+              
+   </div>
+
+

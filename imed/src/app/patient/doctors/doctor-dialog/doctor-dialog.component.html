@@ -1,0 +1,17 @@
+
+<form [formGroup]="appointmentForm" (ngSubmit)="newApp()">
+    <p>Dr.(a): {{data.name}}</p>
+    <input formControlName="date" type="date" (change)="loadTimes($event.target)" (ngModel)="date">
+    <br>
+    <div *ngIf="times">
+        <label for="timer">Selecione um dos horários disponíveis</label>
+        <br>
+        <select  name="timer" formControlName="timer" required>
+            <option></option>
+            <option *ngFor="let time of times;" value="{{time}}">{{time}}</option>
+        </select>
+    </div>
+    <button type="submit">Agendar</button>
+    <button (click)="onNoClick()">Cancelar</button>
+</form>
+

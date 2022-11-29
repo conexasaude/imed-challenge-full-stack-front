@@ -1,0 +1,82 @@
+<div *ngIf="page" class="login-box">
+    <h2>Login</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="user-box">
+        <input formControlName="login" value="login" type="text" name="" required="">
+        <label>Usuario</label>
+      </div>
+      <div class="user-box">
+        <input formControlName="pass" type="password" name="" required="">
+        <label>Senha</label>
+      </div>
+      <h3>{{msg}}</h3>
+      <div class="submitBtn">
+        <a  (click)="onSubmit()">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Logar
+        </a>
+        <a (click)="page=!page">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          Registrar
+      </a>
+    </div>
+   </form>
+  </div>
+
+
+  <div *ngIf="!page" class="login-box">
+    <h2>Registrar novo usuario</h2>
+    <form [formGroup]="newUserForm" (ngSubmit)="newUser()">
+      <div class="user-box">
+        <input formControlName="name" type="text" name="" required="">
+        <label>Nome</label>
+      </div>
+      <div class="user-box">
+        <input formControlName="login" type="text" name="" required="">
+        <label>Usuario</label>
+      </div>
+      <div class="user-box">
+        <input formControlName="pass" type="password" name="" required="">
+        <label>Senha</label>
+      </div>
+      <div class="user-box">
+        <input formControlName="passConfirm" type="password" name="" required="">
+        <label>Confirme a senha</label>
+      </div>
+      <div *ngIf="newUserForm.value.pass && newUserForm.value.passConfirm && newUserForm.value.pass != newUserForm.value.passConfirm">Senhas não são identicas</div>
+
+      <input (click)="prof=!prof" type="radio">
+      <label for="prof" >Profissional de saude</label>
+
+      <div *ngIf="prof" class="user-box">
+        <input formControlName="crm" type="text" name="" required="">
+        <label>CRM</label>
+      </div>
+
+      <div></div>
+
+
+      <div class="submitBtn">
+        <a  (click)="newUser()">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Criar usuario
+        </a>
+        <a (click)="page=!page">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          Login
+      </a>
+    </div>
+   </form>
+  </div>
