@@ -1,0 +1,23 @@
+.sign-in {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+
+    &-title {
+        text-align: center;
+    }
+
+    &-fields {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+    }
+  }
+
+  mat-form-field {
+    margin: 10px;
+  }

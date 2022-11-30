@@ -1,0 +1,46 @@
+<a [routerLink]="'[login]'"></a>
+<div class="sign-in">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="sign-in-title">
+            <h3>Sign In</h3>
+        </div>
+        <div class="sign-in-fields">
+            <mat-form-field>
+                <mat-label>Enter your username</mat-label>
+                <input matInput [type]="'text'" formControlName="username">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Enter your password</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+        </div>
+        <button mat-raised-button color="primary" type="submit">Login</button>
+    </form>
+</div>
+
+
+
+<!-- <form [formGroup]="loginForm">
+
+    <div class="header">Login to your account</div>
+  
+    <mat-form-field>
+      <input matInput type="email" id="email" placeholder="Email" autocomplete="off" formControlName="email" required>
+    </mat-form-field>
+  
+    <mat-form-field>
+      <input matInput type="password" id="password" placeholder="Password" autocomplete="off" formControlName="password" required>
+    </mat-form-field>
+  
+    <div class="actions">
+      <button mat-flat-button color="primary" type="submit" (click)="login()" [disabled]="!loginForm.valid">Login</button>
+      <div class="separator">
+        <span>OR</span>
+      </div>
+      <button mat-stroked-button type="button" routerLink="/signup">Sign up</button>
+    </div>
+  
+</form> -->

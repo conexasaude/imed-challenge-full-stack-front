@@ -1,0 +1,18 @@
+.filter-form {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: center;
+
+    mat-form-field {
+        margin: 10px;
+    }
+
+    button {
+        margin: 10px;
+    }
+}
+
+.appointment-view {
+   margin: 30px 100px
+}
